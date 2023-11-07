@@ -2,16 +2,28 @@
 
 int main(void)
 {
-	char *spc = NULL;
+	char *eddiecommand = NULL;
 	size_t l = 0;
 
 	while (1)
 	{
 		ann_printf("eddieann$ ");
-		getline(&spc, &l, stdin);
-		ann_printf(spc);
+		if ((getline(&eddiecommand, &l, stdin)) == -1)
+		{
+			if (feof(stdin))
+			{
+				ann_printf("\n");
+				exit(EXIT_SUCCESS);
+			}
+			else
+			{
+				perror("No input found\n");
+				exit(EXIT_FAILURE);
+			}
+		}
+		eddie_execution();
 	}
 
-	free(spc);
+	free(eddiecommand);
 	return (0);
 }

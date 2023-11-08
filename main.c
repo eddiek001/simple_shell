@@ -21,7 +21,8 @@ int main(void)
 				exit(EXIT_FAILURE);
 			}
 		}
-		eddie_execution();
+		/*eddiecommand[strcspn(eddiecommand, "\n")] = '\0';*/
+		eddie_execution(eddiecommand);
 	}
 
 	free(eddiecommand);

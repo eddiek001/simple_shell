@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 void ann_printf(const char *annstr);
-void ann_token(char eddiecommand[]);
 void eddie_execution(char *eddiecommand);
+char *eddie_findpath(char *eddiecmd);
 
 #endif

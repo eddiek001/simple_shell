@@ -4,9 +4,18 @@ void eddie_execution(char *eddiecommand)
 {
 	pid_t ch_p;
 	int annexec, c = 0;
-	char *argv[164], *eddiecmd;
-	char *anntoken;
+	char *argv[1000], *eddiecmd_pathfile, *anntoken;
 
+	for (anntoken = strtok(eddiecommand, " "); anntoken; anntoken = strtok(NULL, " "))
+	{
+		argv[c++] = anntoken;
+	}
+	argv[c] = NULL;
+	if (!(eddiecmd_pathfile = eddie_findpath(argv[0])))
+	{
+		ann_printf("NO COMMAND FOUND\n");
+		return;
+	}
 	ch_p = fork();/*creation of the child process*/
 	if (ch_p == -1)/*if the child process has an error*/
 	{
@@ -15,16 +24,7 @@ void eddie_execution(char *eddiecommand)
 	}
 	else if (ch_p == 0)/*child process created successfully*/
 	{
-		anntoken = strtok(eddiecommand, " ");
-		eddiecmd = anntoken;
-		while (anntoken != NULL)
-		{
-			argv[c] = anntoken;
-			anntoken = strtok(NULL, " ");
-			c++;
-		}
-		argv[c] = NULL; 
-		annexec = execve(eddiecmd, argv, NULL);
+		annexec = execve(eddiecmd_pathfile, argv, NULL);
 		if (annexec == -1)
 		{
 			perror("annexec");
@@ -35,4 +35,5 @@ void eddie_execution(char *eddiecommand)
 	{
 		wait(NULL);/*parent process*/
 	}
+	free(eddiecmd_pathfile);
 }

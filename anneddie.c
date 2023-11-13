@@ -1,4 +1,9 @@
-#include "shell.h"
+#include "eddieshell.h"
+/**
+ * main - Function to the entry point
+ *
+ * Return: 0 if success
+ */
 
 int main(void)
 {

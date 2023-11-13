@@ -1,6 +1,7 @@
-#include "shell.h"
-
-extern char **environ;
+#include "eddieshell.h"
+/**
+ * eddienviron - function to receive input
+ */
 
 void eddienviron(void)
 {

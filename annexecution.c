@@ -1,11 +1,16 @@
-#include "shell.h"
+#include "eddieshell.h"
+/**
+ * eddie_execution - Function to execute the command
+ * @eddiecommand: input command
+ */
 
 void eddie_execution(char *eddiecommand)
 {
 	int c = 0;
 	char *argv[1000], *eddiecmd_pathfile, *anntoken;
 
-	for (anntoken = strtok(eddiecommand, " "); anntoken; anntoken = strtok(NULL, " "))
+	for (anntoken = strtok(eddiecommand, " ");
+			anntoken; anntoken = strtok(NULL, " "))
 	{
 		argv[c++] = anntoken;
 	}
@@ -23,12 +28,13 @@ void eddie_execution(char *eddiecommand)
 			return;
 		}
 	}
-	if (!(eddiecmd_pathfile = eddie_findpath(argv[0])))
+	eddiecmd_pathfile = eddie_findpath(argv[0]);
+	if (eddiecmd_pathfile == NULL)
 	{
 		ann_printf("NO COMMAND FOUND\n");
 		return;
 	}
 	anncreate_chp(argv);
-	
+
 	free(eddiecmd_pathfile);
 }

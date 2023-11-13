@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef _EDDIESHELL_H
+#define _EDDIESHELL_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -13,5 +13,7 @@ void eddie_execution(char *eddiecommand);
 char *eddie_findpath(char *eddiecmd);
 void anncreate_chp(char *argv[]);
 void eddienviron(void);
+
+extern char **environ;
 
 #endif

@@ -11,5 +11,7 @@
 void ann_printf(const char *annstr);
 void eddie_execution(char *eddiecommand);
 char *eddie_findpath(char *eddiecmd);
+void anncreate_chp(char *argv[]);
+void eddienviron(void);
 
 #endif

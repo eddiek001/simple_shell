@@ -4,7 +4,7 @@
  * annexit - function to exit shell
  * @argv: input string
  */
-void annexit(char *argv)
+void annexit(char *argv[])
 {
 	int status;
 

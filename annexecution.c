@@ -19,8 +19,8 @@ void eddie_execution(char *eddiecommand)
 	{
 		if (strcmp(argv[0], "exit") == 0)
 		{
-			free(eddiecommand);
-			exit(0);
+			annexit(argv);
+			return;
 		}
 		else if (strcmp(argv[0], "eddienv") == 0)
 		{

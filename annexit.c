@@ -13,5 +13,7 @@ void annexit(char *argv[])
 	{
 		status = atoi(argv[1]);
 	}
+	free(argv[0]);
+	free(argv);
 	exit(status);
 }

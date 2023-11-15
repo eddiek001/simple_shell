@@ -1,4 +1,12 @@
 #include "eddieshell.h"
+/**
+ * ann_strcpy - a function that copies a string
+ *
+ * @anndest: input
+ * @annsrc: input
+ *
+ * Return: ann dest
+ */
 
 char *ann_strcpy(char *anndest, const char *annsrc)
 {

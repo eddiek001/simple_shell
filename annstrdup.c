@@ -1,4 +1,11 @@
 #include "eddieshell.h"
+/**
+ * ann_strdup - a function that duplicates a string
+ *
+ * @dupstr: input string
+ *
+ * Return: duplicate string
+ */
 
 char *ann_strdup(const char *dupstr)
 {

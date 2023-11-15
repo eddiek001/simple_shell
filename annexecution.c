@@ -17,12 +17,12 @@ void eddie_execution(char *eddiecommand)
 	argv[c] = NULL;
 	if (argv[0] != NULL)
 	{
-		if (strcmp(argv[0], "exit") == 0)
+		if (eddie_strcmp(argv[0], "exit") == 0)
 		{
 			annexit(argv);
 			return;
 		}
-		else if (strcmp(argv[0], "eddienv") == 0)
+		else if (eddie_strcmp(argv[0], "eddienv") == 0)
 		{
 			eddienviron();
 			return;

@@ -15,6 +15,9 @@ void anncreate_chp(char *argv[]);
 void eddienviron(void);
 void annexit(char *argv[]);
 size_t eddie_strlen(const char *eddiestr);
+char *ann_strcpy(char *anndest, const char *annsrc);
+int eddie_strcmp(const char *es1, const char *es2);
+char *ann_strdup(const char *dupstr);
 
 extern char **environ;
 

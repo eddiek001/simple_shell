@@ -20,11 +20,11 @@ char *eddie_findpath(char *eddiecmd)
 
 		if (eddiecmdlen + anntokenlen + 2 <= 4000)
 		{
-			strcpy(annpath_size, anntoken);
+			ann_strcpy(annpath_size, anntoken);
 			annpath_size[anntokenlen] = '/';
-			strcpy(annpath_size + anntokenlen + 1, eddiecmd);
+			ann_strcpy(annpath_size + anntokenlen + 1, eddiecmd);
 			if (access(annpath_size, X_OK) == 0)
-				return (strdup(annpath_size));
+				return (ann_strdup(annpath_size));
 		}
 		anntoken = strtok(NULL, ":");
 	}

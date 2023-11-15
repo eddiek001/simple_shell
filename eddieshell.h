@@ -14,6 +14,7 @@ char *eddie_findpath(char *eddiecmd);
 void anncreate_chp(char *argv[]);
 void eddienviron(void);
 void annexit(char *argv[]);
+size_t eddie_strlen(const char *eddiestr);
 
 extern char **environ;
 

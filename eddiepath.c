@@ -15,8 +15,8 @@ char *eddie_findpath(char *eddiecmd)
 	anntoken = strtok(annpathname, ":");
 	while (anntoken != NULL)
 	{
-		unsigned int eddiecmdlen = strlen(eddiecmd);
-		unsigned int anntokenlen = strlen(anntoken);
+		unsigned int eddiecmdlen = eddie_strlen(eddiecmd);
+		unsigned int anntokenlen = eddie_strlen(anntoken);
 
 		if (eddiecmdlen + anntokenlen + 2 <= 4000)
 		{

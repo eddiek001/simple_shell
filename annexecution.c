@@ -51,7 +51,7 @@ void eddie_execution(char *eddiecommand)
 		else
 		{
 			wait(NULL);/*parent process*/
-			free(eddiecmd_pathfile);
 		}
+		free(eddiecmd_pathfile);
 	}
 }

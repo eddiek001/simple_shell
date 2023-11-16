@@ -18,13 +18,13 @@ int main(void)
 		if (eddiegetline == -1)
 		{
 			write(STDOUT_FILENO, "\n", 1);
-			free(eddiecommand);
+			/*free(eddiecommand);*/
 			break;
 		}
 		eddiecommand[strcspn(eddiecommand, "\n")] = '\0';
 		eddie_execution(eddiecommand);
 	}
 
-	free(eddiecommand);
+	/*free(eddiecommand);*/
 	return (0);
 }

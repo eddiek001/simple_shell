@@ -38,5 +38,6 @@ void eddie_execution(char *eddiecommand)
 	{
 		anncreate_chp(argv);
 		free(eddiecmd_pathfile);
+		free(eddiecommand);
 	}
 }

@@ -25,6 +25,6 @@ int main(void)
 		eddie_execution(eddiecommand);
 	}
 
-	/*free(eddiecommand);*/
+	free(eddiecommand);
 	return (0);
 }

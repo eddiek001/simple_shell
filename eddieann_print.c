@@ -7,5 +7,5 @@
 
 void ann_printf(const char *annstr)
 {
-	write(1, annstr, eddie_strlen(annstr));
+	write(STDOUT_FILENO, annstr, eddie_strlen(annstr));
 }

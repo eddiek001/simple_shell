@@ -9,24 +9,19 @@ int main(void)
 {
 	char *eddiecommand = NULL;
 	size_t l = 0;
+	ssize_t eddiegetline;
 
 	while (1)
 	{
 		ann_printf("eddieann$ ");
-		if ((getline(&eddiecommand, &l, stdin)) == -1)
+		eddiegetline = getline(&eddiecommand, &l, stdin);
+		if (eddiegetline == -1)
 		{
-			if (feof(stdin))
-			{
-				ann_printf("\n");
-				exit(EXIT_SUCCESS);
-			}
-			else
-			{
-				perror("No input found\n");
-				exit(EXIT_FAILURE);
-			}
+			write(STDOUT_FILENO, "\n", 1);
+			free(eddiecommand);
+			break;
 		}
-		/*eddiecommand[strcspn(eddiecommand, "\n")] = '\0';*/
+		eddiecommand[strcspn(eddiecommand, "\n")] = '\0';
 		eddie_execution(eddiecommand);
 	}
 
